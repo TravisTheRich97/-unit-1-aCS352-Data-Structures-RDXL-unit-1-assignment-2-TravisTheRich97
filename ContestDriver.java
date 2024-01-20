@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.LinkedList;  
 import java.util.Random;
 
 public class ContestDriver {
@@ -13,7 +13,6 @@ public class ContestDriver {
             times[i] = runSimulation(numberOfContestants, roundCounts[i]);
         }
 
-        // Display the times after all simulations
         System.out.println("\nSimulation Times:");
         for (int i = 0; i < roundCounts.length; i++) {
             System.out.println("Rounds: " + roundCounts[i] + ", Time: " + times[i] + " ms");
@@ -23,7 +22,7 @@ public class ContestDriver {
     private static long runSimulation(int numberOfContestants, int numberOfRounds) {
         System.out.println("\nStarting Simulation with " + numberOfContestants + " contestants and " + numberOfRounds + " rounds");
 
-        ArrayList<Contestant> contestants = new ArrayList<>();
+        LinkedList<Contestant> contestants = new LinkedList<>(); 
 
         for (int i = 0; i < numberOfContestants; i++) {
             Contestant contestant = new Contestant("Contestant " + i, 20 + i);
@@ -56,6 +55,6 @@ public class ContestDriver {
         long duration = endTime - startTime;
         System.out.println("Simulation for " + numberOfRounds + " rounds completed in " + duration + " ms");
         
-        return duration; // Return the time taken for this simulation
+        return duration; // Return time taken 
     }
 }
